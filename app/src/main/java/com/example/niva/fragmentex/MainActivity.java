@@ -7,11 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
-public class MainActivity extends AppCompatActivity implements MainInterface{
+public class MainActivity extends AppCompatActivity{
 
-    private Button b1, b2;
+    private Button b1;
     private FrameLayout fragmentContainer;
-    boolean first = true;
+    private boolean first = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,12 +21,12 @@ public class MainActivity extends AppCompatActivity implements MainInterface{
         fragmentContainer = (FrameLayout) findViewById(R.id.fragmentContainer);
 
         b1 = (Button) findViewById(R.id.cmdPress);
-
+        switchFragment(new BlankFragment2());
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(first)
+                if (first)
                     switchFragment(new BlankFragment());
                 else
                     switchFragment(new BlankFragment2());
@@ -47,11 +48,7 @@ public class MainActivity extends AppCompatActivity implements MainInterface{
                 .commit();
     }
 
-    //interface implementation
-    @Override
-    public void changeButtonTitle(String title) {
-        b1.setText(title);
-    }
+
 
     @Override
     public void onBackPressed() {

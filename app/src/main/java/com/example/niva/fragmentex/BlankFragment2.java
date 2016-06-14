@@ -7,21 +7,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class BlankFragment2 extends Fragment {
-    private View view;
-
-    public BlankFragment2() {
-        // Required empty public constructor
-    }
-
-
-    @Override
+      @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_blank_fragment2, container, false);
-
-
-
+       View view = inflater.inflate(R.layout.fragment_blank_fragment2, container, false);
         return view;
     }
 }
